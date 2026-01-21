@@ -53,6 +53,11 @@ Issues = "https://github.com/patrickcarmichael/changedetection-mcp-server/issues
 [project.scripts]
 changedetection-mcp-server = "server:main"
 
+[tool.setuptools]
+# Explicitly declare modules to avoid accidental package discovery in flat layout.
+py-modules = ["server", "server_enhanced", "healthcheck"]
+packages = []
+
 [tool.black]
 line-length = 88
 target-version = ["py310", "py311", "py312"]

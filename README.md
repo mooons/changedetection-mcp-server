@@ -110,6 +110,30 @@ Add to your Claude Desktop configuration (`claude_desktop_config.json`):
 }
 ```
 
+### With uvx (run directly from GitHub)
+
+You can also run this server via `uvx` without manually cloning the repo. Add to your
+MCP client configuration:
+
+```json
+{
+  "mcpServers": {
+    "changedetection": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/mooons/changedetection-mcp-server@main",
+        "changedetection-mcp-server"
+      ],
+      "env": {
+        "CHANGEDETECTION_URL": "http://localhost:5000",
+        "CHANGEDETECTION_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
 ### Example Interactions
 
 **List all watches:**
